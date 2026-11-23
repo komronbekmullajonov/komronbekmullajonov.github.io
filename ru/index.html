@@ -2018,6 +2018,19 @@
     .case-points, .case-tag { background: rgba(255, 255, 255, 0.06); }
     .hero-role-sub, .section-lead, .discipline-desc, .stat-item-label, .chip-main small, .lang-legend, .footer-bottom { color: #14121F; }
     .dark-band .section-lead, .case-summary, .faq-answer-inner p { color: #F3F3F6; }
+
+    body { --dark: 0; background-color: color-mix(in oklab, #14121F calc(var(--dark) * 100%), #FFFFFF); }
+    html.js-bg .dark-band, html.js-bg .light-band, html.js-bg .footer-section { background: transparent; }
+    html.js-bg .light-band { border-bottom: 0; }
+    /* text follows the background: switches quickly around the midpoint so it always reads */
+    body { --ink-t: clamp(0, calc((var(--dark) - 0.42) * 6), 1);
+           --ink: color-mix(in oklab, #FFFFFF calc(var(--ink-t) * 100%), #14121F); }
+    html.js-bg .light-band, html.js-bg .dark-band { color: var(--ink); }
+    html.js-bg .light-band .section-title-lg, html.js-bg .dark-band .section-title-lg,
+    html.js-bg .light-band .section-lead, html.js-bg .dark-band .section-lead,
+    html.js-bg .discipline-title, html.js-bg .discipline-desc,
+    html.js-bg .faq-wrap .section-title-lg, html.js-bg .faq-wrap .section-lead { color: var(--ink); }
+    html.js-bg .discipline-item { border-bottom-color: color-mix(in oklab, #E9E7FF calc((1 - var(--ink-t)) * 100%), #2B1E8F); }
   </style>
 </head>
 <body>
@@ -2409,7 +2422,7 @@
 <script>
     (function () {
       'use strict';
-      const I18N = {"ru": {"page_title": "Комронбек Муллажонов — HR-стажёр (онбординг и L&D)", "toast_copied": "Скопировано: ", "rotator": ["онбординг", "L&D", "дизайн", "сайты", "сотрудничество"], "toast_copy": "Email скопирован: kamronc1kda@gmail.com", "meta_desc": "Комронбек Муллажонов — HR-стажёр (онбординг и L&D) в учебном центре Registan, студент Webster University в Ташкенте. Графический дизайн и веб-проекты.", "toast_copy_fail": "Email: kamronc1kda@gmail.com"}};
+      const I18N = {"ru": {"page_title": "Комронбек Муллажонов — HR-стажёр (онбординг и L&D)", "toast_copy_fail": "Email: kamronc1kda@gmail.com", "toast_copied": "Скопировано: ", "meta_desc": "Комронбек Муллажонов — HR-стажёр (онбординг и L&D) в учебном центре Registan, студент Webster University в Ташкенте. Графический дизайн и веб-проекты.", "rotator": ["онбординг", "L&D", "дизайн", "сайты", "сотрудничество"], "toast_copy": "Email скопирован: kamronc1kda@gmail.com"}};
       const lang = document.documentElement.lang in I18N ? document.documentElement.lang : 'uz';
       const dict = I18N[lang];
       const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2579,6 +2592,29 @@
         if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
       }, { passive: true });
       onScroll();
+
+      /* scroll-linked page background: eases Oq -> Tun -> Oq around dark sections */
+      const darkBands = Array.from(document.querySelectorAll('.dark-band'));
+      if (darkBands.length && window.CSS && CSS.supports('color', 'color-mix(in oklab, #000 50%, #fff)')) {
+        document.documentElement.classList.add('js-bg');
+        let bgTick = false;
+        function ease(x) { return x * x * (3 - 2 * x); }
+        function updateBg() {
+          const vh = window.innerHeight, mid = vh * 0.55, zone = vh * 0.45;
+          let d = 0;
+          darkBands.forEach(function (band) {
+            const r = band.getBoundingClientRect();
+            const enter = Math.min(Math.max((mid - r.top) / zone + 0.5, 0), 1);
+            const exit = Math.min(Math.max((r.bottom - mid) / zone + 0.5, 0), 1);
+            d = Math.max(d, ease(Math.min(enter, exit)));
+          });
+          document.body.style.setProperty('--dark', d.toFixed(3));
+          bgTick = false;
+        }
+        window.addEventListener('scroll', function () { if (!bgTick) { bgTick = true; requestAnimationFrame(updateBg); } }, { passive: true });
+        window.addEventListener('resize', updateBg);
+        updateBg();
+      }
 
       /* sign-off logo: play once in view, replay on click */
       const signoff = document.querySelector('.signoff');
