@@ -23,10 +23,10 @@
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="https://komronbekmullajonov.github.io/og-image.jpg" name="twitter:image"/>
 <meta content="#F2F4F7" name="theme-color"/>
-<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B365D'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23FFFFFF'%3EKM%3C/text%3E%3Ccircle cx='50' cy='14' r='5' fill='%23D95D24'/%3E%3C/svg%3E" rel="icon"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14.4' fill='%233D2BFF'/%3E%3Cg transform='translate(14 14) scale(3.6)'%3E%3Cpolygon fill='%23fff' points='0,0 4,0 4,1.3 2,5 4,8.7 4,10 0,10'/%3E%3Cpolygon fill='%23fff' points='5.4,0 6.2,0 7.7,4.8 9.2,0 10,0 10,10 5.4,10'/%3E%3Crect fill='%23FFB224' x='4.2' y='4.5' width='1' height='1'/%3E%3C/g%3E%3C/svg%3E" rel="icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&amp;family=Manrope:wght@400..800&amp;display=swap" rel="stylesheet"/>
 <style>
     /* ==========================================================================
        1. DESIGN TOKENS — MATURE NAVY, BURNT TERRACOTTA ORANGE & SLATE GRAY
@@ -1663,6 +1663,280 @@
       .faq-item.open .faq-answer, .mobile-drawer.open .mobile-drawer-inner, .app-chip.chip-pop { animation: none; }
       .discipline-item > *, .contact-card, .cc-icon { transition: none; }
     }
+
+    /* ==========================================================================
+       17. BRANDBOOK LAYER — Darvoza / Quyosh / Tun / Oq / Tuman, Plus Jakarta Sans
+       ========================================================================== */
+    :root {
+      --darvoza: #3D2BFF;
+      --darvoza-2: #6A5CFF;
+      --darvoza-hover: #2E1FE6;
+      --quyosh: #FFB224;
+      --quyosh-60: #FFD17C;
+      --quyosh-35: #FFE4B2;
+      --tun: #14121F;
+      --oq: #FFFFFF;
+      --tuman: #F3F3F6;
+
+      --bg-light: var(--oq);
+      --surface-light: var(--tuman);
+      --surface-light-alt: #E9E7FF;
+      --border-light: #E3E1EC;
+      --ink-light-primary: var(--tun);
+      --ink-light-secondary: #4A4760;
+
+      --bg-dark: var(--tun);
+      --surface-dark: #1E1B2E;
+      --surface-dark-alt: #262238;
+      --border-dark: #322D48;
+      --ink-dark-primary: #FFFFFF;
+      --ink-dark-secondary: #B5B1C8;
+
+      --navy: var(--darvoza);
+      --navy-hover: var(--darvoza-hover);
+      --orange-soft: rgba(61, 43, 255, 0.08);
+
+      --font-display: 'Plus Jakarta Sans', 'Manrope', system-ui, sans-serif;
+      --font-sans: 'Plus Jakarta Sans', 'Manrope', system-ui, sans-serif;
+      --font-mono: 'Plus Jakarta Sans', 'Manrope', system-ui, sans-serif;
+
+      --r-sm: 8px;
+      --r-md: 12px;
+      --r-lg: 16px;
+      --u: 8px;
+    }
+
+    /* accent: indigo on light backgrounds, sun on dark (brandbook contrast table) */
+    .hero-section, .light-band, .footer-section { --orange: var(--darvoza); --orange-hover: var(--darvoza-hover); }
+    .dark-band { --orange: var(--quyosh); }
+    .contact-stage { --orange: var(--quyosh); }
+
+    body { background: var(--oq); color: var(--tun); font-size: 1.125rem; line-height: 1.556; }
+
+    /* type scale — Display 64/72 800, H1 48/56 700, H2 32/40 700, H3 24/32 600, body 18/28, small 14/20 500 */
+    .hero-headline {
+      font-size: clamp(2.5rem, 5.4vw, 4rem);
+      line-height: 1.125;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+    .section-title-lg, .contact-title {
+      font-size: clamp(2rem, 3.6vw, 3rem);
+      line-height: 1.17;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+    .discipline-title, .case-title, .hardware-box h3 { font-weight: 700; letter-spacing: -0.015em; }
+    .discipline-title { font-size: clamp(1.35rem, 2.2vw, 1.5rem); line-height: 1.33; }
+    .case-title { font-size: 1.5rem; line-height: 1.33; }
+    .section-lead, .hero-role-sub { font-size: 1.125rem; line-height: 1.556; }
+    .case-period, .case-tag, .tool-pill, .meta-badge, .lang-level, .cc-link, .meta-chip, .tf-btn, .clock-pill {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0;
+    }
+    .case-period, .lang-level { text-transform: none; font-weight: 600; }
+
+    /* header + logo */
+    .studio-header { background-color: rgba(255, 255, 255, 0.86); border-bottom-color: var(--border-light); }
+    .studio-header.scrolled { background-color: rgba(255, 255, 255, 0.97); box-shadow: 0 6px 24px -14px rgba(20, 18, 31, 0.18); }
+    .brand { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; color: var(--tun); }
+    .brand-mark { width: 32px; height: 32px; }
+    .brand-mark .mk-k, .brand-mark .mk-m { fill: var(--darvoza); }
+    .mk-p1 { fill: var(--quyosh); } .mk-p2 { fill: var(--quyosh-60); } .mk-p3 { fill: var(--quyosh-35); }
+    .brand-name { font-weight: 800; font-size: 0.86rem; line-height: 1.1; letter-spacing: -0.01em; }
+    .header-nav { background: var(--tuman); border-color: transparent; }
+    .header-nav a { color: var(--ink-light-secondary); font-weight: 600; }
+    .header-nav a:hover { color: var(--darvoza); background: #FFFFFF; }
+    .lang-switcher { background: var(--tuman); border-color: transparent; border-radius: var(--r-sm); }
+    .lang-btn { font-family: var(--font-sans); font-weight: 700; }
+    .lang-btn.active { background: var(--darvoza); }
+    .btn-header-cta { background: var(--darvoza); border-radius: var(--r-sm); }
+    .btn-header-cta:hover { background: var(--darvoza-hover); }
+    .mobile-menu-btn { background: var(--tuman); border-color: transparent; font-family: var(--font-sans); }
+
+    /* hero: "Tong" gradient 160deg */
+    .hero-section {
+      background: linear-gradient(160deg, #E9E7FF 0%, #FFF1D6 100%);
+      border-bottom: 0;
+    }
+    .hero-headline .highlight-navy { color: var(--darvoza); }
+    .hero-headline .highlight-orange {
+      color: var(--tun);
+      background: linear-gradient(transparent 62%, var(--quyosh) 62%, var(--quyosh) 92%, transparent 92%);
+      padding: 0 0.04em;
+    }
+    .meta-badge { background: rgba(255, 255, 255, 0.7); border-color: transparent; color: var(--ink-light-secondary); border-radius: var(--r-sm); }
+    .meta-badge.accent-navy { background: var(--darvoza); color: #FFFFFF; }
+    .meta-badge.accent-orange { background: var(--tun); color: #FFFFFF; border-color: transparent; }
+    .hero-role-card { background: rgba(255, 255, 255, 0.82); border: 0; border-left: 4px solid var(--darvoza); border-radius: var(--r-md); }
+    .hero-role-title { font-weight: 700; color: var(--tun); }
+    .btn-primary-studio { background: var(--darvoza); border-radius: var(--r-md); font-weight: 700; }
+    .btn-primary-studio:hover { background: var(--darvoza-hover); }
+    .btn-secondary-studio { background: #FFFFFF; border-color: transparent; border-radius: var(--r-md); font-weight: 600; }
+    .btn-secondary-studio:hover { border-color: var(--darvoza); }
+    .hero-quick-stats { border-top-color: rgba(20, 18, 31, 0.1); }
+    .stat-item-num { color: var(--darvoza); font-weight: 800; }
+
+    /* portrait: indigo frame + sun + pixel trail */
+    .portrait-card {
+      position: relative;
+      background: var(--darvoza);
+      border: 0;
+      border-radius: var(--r-lg);
+      padding: 14px;
+      overflow: visible;
+    }
+    .portrait-card:hover { border-color: transparent; box-shadow: none; }
+    .portrait-frame { border-radius: var(--r-md); background: #E9E7FF; }
+    .pc-sun {
+      position: absolute;
+      top: -26px;
+      right: -26px;
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: var(--quyosh);
+      z-index: -1;
+    }
+    .pc-trail {
+      position: absolute;
+      left: -34px;
+      bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .pc-trail i { display: block; background: var(--quyosh); }
+    .pc-trail i:nth-child(1) { width: 18px; height: 18px; }
+    .pc-trail i:nth-child(2) { width: 14px; height: 14px; background: var(--quyosh-60); }
+    .pc-trail i:nth-child(3) { width: 10px; height: 10px; background: var(--quyosh-35); }
+    .portrait-stage { position: relative; z-index: 0; }
+
+    /* disciplines with brand line icons */
+    .light-band { background: var(--oq); border-bottom: 0; }
+    .discipline-item { grid-template-columns: 64px 1.1fr 1.4fr; border-radius: var(--r-md); border-bottom-color: var(--border-light); }
+    .discipline-item:hover { background: var(--tuman); }
+    .discipline-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--r-md);
+      display: grid;
+      place-items: center;
+      background: #E9E7FF;
+      color: var(--darvoza);
+    }
+    .discipline-title { color: var(--tun); }
+    .tool-pill { background: var(--tuman); border-color: transparent; border-radius: var(--r-sm); }
+    .tool-pill:hover { border-color: var(--darvoza); }
+
+    /* experience (Tun) with Kesik shape */
+    .dark-band { background: var(--tun); }
+    .brand-band { position: relative; overflow: hidden; isolation: isolate; }
+    .band-shape {
+      position: absolute;
+      right: -6vw;
+      top: -4vw;
+      width: min(46vw, 560px);
+      height: auto;
+      z-index: -1;
+      fill: rgba(61, 43, 255, 0.22);
+    }
+    .case-card { background: var(--surface-dark); border-color: var(--border-dark); border-radius: var(--r-lg); }
+    .case-card:hover { border-color: var(--darvoza-2); transform: none; box-shadow: none; background: var(--surface-dark); }
+    .case-tag { background: rgba(255, 255, 255, 0.06); border-color: transparent; color: var(--ink-dark-secondary); border-radius: 6px; font-size: 0.78rem; }
+    .case-org { color: #DAD6FF; font-weight: 600; }
+    .case-points { border-radius: var(--r-md); background: rgba(255, 255, 255, 0.03); }
+    .case-points li::before { border-radius: 0; width: 7px; height: 7px; background: var(--quyosh); }   /* Piksel bullet */
+    .case-site-link { color: var(--quyosh); font-family: var(--font-sans); font-weight: 600; }
+
+    /* tools & languages */
+    .hardware-box { background: var(--tuman); border: 0; border-radius: var(--r-lg); }
+    .app-chip { background: #FFFFFF; border-color: transparent; border-radius: var(--r-md); }
+    .app-chip:hover { border-color: var(--darvoza); }
+    .app-chip span { background: var(--darvoza); font-family: var(--font-sans); font-weight: 700; letter-spacing: 0.02em; }
+    .tf-btn { background: #FFFFFF; border-color: transparent; }
+    .tf-btn.active { background: var(--darvoza); border-color: var(--darvoza); }
+    .tf-btn em, .tf-btn.active em { color: inherit; opacity: 0.7; }
+    .lang-row { background: #FFFFFF; border-color: transparent; border-radius: var(--r-md); }
+    .lang-scale i { border-radius: 0; height: 8px; background: #E3E1EC; }        /* pixel scale */
+    .lang-scale i.on::after { background: var(--darvoza); }
+    .lang-row[data-level="5"] .lang-scale i.on::after { background: var(--quyosh); }
+    .lang-hello { color: var(--darvoza); }
+    .lang-level { color: var(--darvoza); }
+
+    /* FAQ (Tun) */
+    .faq-item { background: var(--surface-dark); border-color: var(--border-dark); border-radius: var(--r-md); }
+    .faq-item.open { border-color: var(--quyosh); }
+    .faq-question { font-weight: 700; }
+    .btn-orange-solid { background-color: var(--quyosh); color: var(--tun); border-radius: var(--r-md); font-weight: 700; }
+    .btn-orange-solid:hover { background-color: #FFC350; }
+
+    /* contact stage: Darvoza with Qoya cut by the edge */
+    .footer-section { background: var(--oq); }
+    .contact-stage { background: var(--darvoza); border-radius: 20px; }
+    .contact-stage::after { display: none; }
+    .contact-stage::before { background: radial-gradient(420px circle at var(--mx, 85%) var(--my, 20%), rgba(255, 178, 36, 0.22), transparent 65%); }
+    .stage-rock {
+      position: absolute;
+      left: -9%;
+      bottom: -18%;
+      width: 46%;
+      height: auto;
+      z-index: -1;
+      fill: rgba(255, 255, 255, 0.07);
+    }
+    .rotator { color: var(--quyosh); }
+    .rotator::after { background: var(--quyosh); opacity: 0.55; }
+    .contact-sub { color: #E6E3FF; }
+    .meta-chip { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.2); color: #FFFFFF; }
+    .contact-card { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
+    .contact-card:hover, .contact-card:focus-within { border-color: var(--quyosh); background: rgba(255, 255, 255, 0.13); }
+    .contact-card.is-primary { background: rgba(20, 18, 31, 0.28); border-color: var(--quyosh); }
+    .cc-label em { color: #DAD6FF; }
+    .cc-link { color: #FFFFFF; }
+    .cc-copy:hover { border-color: var(--quyosh); background: rgba(255, 178, 36, 0.2); }
+
+    /* sign-off */
+    .signoff {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(14px, 2.5vw, 28px);
+      margin: clamp(40px, 6vw, 72px) 0 12px;
+    }
+    .signoff-mark { width: clamp(56px, 8vw, 96px); height: auto; }
+    .signoff-mark .mk-k, .signoff-mark .mk-m { fill: var(--darvoza); }
+    .signoff-text {
+      font-weight: 800;
+      font-size: clamp(1.8rem, 5.4vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      color: var(--tun);
+    }
+    .footer-bottom { border-top-color: var(--border-light); }
+    .to-top { color: var(--darvoza); }
+    .to-top:hover { background: var(--darvoza); }
+    .ring-fg { stroke: var(--darvoza); }
+
+    .scroll-progress-bar { background: linear-gradient(90deg, var(--darvoza) 0%, var(--darvoza-2) 100%); }
+    .toast-notice { background: var(--tun); font-family: var(--font-sans); border-radius: var(--r-md); }
+    .skip-link { background: var(--darvoza); }
+    a:focus-visible, button:focus-visible { outline-color: var(--darvoza); }
+    .dark-band a:focus-visible, .dark-band button:focus-visible, .contact-stage a:focus-visible, .contact-stage button:focus-visible { outline-color: var(--quyosh); }
+
+    @media (max-width: 1024px) {
+      .pc-trail { left: -26px; }
+      .discipline-item { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 820px) {
+      .brand-name { display: none; }
+      .band-shape { width: 80vw; right: -30vw; }
+    }
+    @media (max-width: 560px) {
+      .pc-sun { width: 60px; height: 60px; top: -16px; right: -12px; }
+      .pc-trail { display: none; }
+      .signoff { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -1671,12 +1945,7 @@
 <!-- 1. TOP BAR -->
 <header class="studio-header" id="studio-header">
 <div class="container header-inner">
-<div class="clocks-group">
-<div class="clock-pill">
-<span>Ташкент</span>
-<strong id="clock-tashkent">--:--</strong>
-</div>
-</div>
+<a class="brand" href="#top" translate="no"><svg aria-hidden="true" class="brand-mark" focusable="false" viewbox="0 0 10 10"><polygon class="mk-k" points="0,0 4,0 4,1.3 2,5 4,8.7 4,10 0,10"></polygon><polygon class="mk-m" points="5.4,0 6.2,0 7.7,4.8 9.2,0 10,0 10,10 5.4,10"></polygon><rect class="mk-p1" height="1" width="1" x="4.2" y="4.5"></rect><rect class="mk-p2" height="0.8" width="0.8" x="4.3" y="6.2"></rect><rect class="mk-p3" height="0.6" width="0.6" x="4.4" y="7.6"></rect></svg><span class="brand-name">Komronbek<br/>Mullajonov</span></a>
 <nav aria-label="Menu" class="header-nav">
 <a href="#capabilities">Направления</a>
 <a href="#experience">Опыт</a>
@@ -1750,7 +2019,7 @@
 </div>
 </div>
 <div class="portrait-stage hero-seq" style="--seq-delay: 220ms;">
-<div class="portrait-card" id="portrait-card">
+<div class="portrait-card" id="portrait-card"><span aria-hidden="true" class="pc-sun"></span><span aria-hidden="true" class="pc-trail"><i></i><i></i><i></i></span>
 <div class="portrait-frame" id="portrait-frame">
 <img alt="Портрет Комронбека Муллажонова" decoding="async" fetchpriority="high" height="820" id="portrait-image" sizes="(max-width: 1024px) 340px, 370px" src="../komronbek-820.webp" srcset="../komronbek-480.webp 480w, ../komronbek-820.webp 820w" width="820"/>
 </div>
@@ -1766,7 +2035,7 @@
 <p class="section-lead">Практический опыт в HR, графическом дизайне и веб-разработке.</p>
 <div class="disciplines-list">
 <div class="discipline-item">
-<div class="discipline-num">01.</div>
+<div aria-hidden="true" class="discipline-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M4 21V5a1 1 0 0 1 1-1h4v17M15 21V4h4a1 1 0 0 1 1 1v16"></path><path d="M2 21h20"></path></svg></div>
 <h3 class="discipline-title">HR, онбординг и L&amp;D</h3>
 <div>
 <p class="discipline-desc">В учебном центре Registan помогаю с адаптацией новых сотрудников и обучением (L&amp;D).</p>
@@ -1780,7 +2049,7 @@
 </div>
 </div>
 <div class="discipline-item">
-<div class="discipline-num">02.</div>
+<div aria-hidden="true" class="discipline-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 4l-4 16"></path></svg></div>
 <h3 class="discipline-title">Сайты, боты и тесты</h3>
 <div>
 <p class="discipline-desc">Создаю удобные сайты и Telegram-боты — например, интернет-магазин Veluro и мой сайт психологических тестов.</p>
@@ -1794,7 +2063,7 @@
 </div>
 </div>
 <div class="discipline-item">
-<div class="discipline-num">03.</div>
+<div aria-hidden="true" class="discipline-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M12 19 19 12l3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="m2 2 7.6 7.6"></path><circle cx="11" cy="11" r="2"></circle></svg></div>
 <h3 class="discipline-title">Графический дизайн и полиграфия</h3>
 <div>
 <p class="discipline-desc">Баннеры, флаеры, визитки и логотипы, а также подготовка файлов к печати.</p>
@@ -1808,7 +2077,7 @@
 </div>
 </div>
 <div class="discipline-item">
-<div class="discipline-num">04.</div>
+<div aria-hidden="true" class="discipline-icon"><svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M8 9h8M8 13h5"></path></svg></div>
 <h3 class="discipline-title">ИИ-инструменты и три языка</h3>
 <div>
 <p class="discipline-desc">Использую ИИ для анализа и контента, свободно работаю на узбекском, английском и русском языках.</p>
@@ -1824,7 +2093,7 @@
 </div>
 </section>
 <!-- 5. EXPERIENCE & PROJECTS -->
-<section class="dark-band" id="experience">
+<section class="dark-band brand-band" id="experience"><svg aria-hidden="true" class="band-shape" focusable="false" viewbox="0 0 10 10"><polygon points="5.4,0 6.2,0 7.7,4.8 9.2,0 10,0 10,10 5.4,10"></polygon></svg>
 <div class="container">
 <h2 class="section-title-lg">Реальная работа. Реальные проекты.</h2>
 <p class="section-lead">Коротко о том, что я делал на каждой позиции.</p>
@@ -1982,7 +2251,7 @@
 <!-- 8. FOOTER / CONTACT -->
 <footer class="footer-section" id="contact">
 <div class="container">
-<div class="contact-stage" id="contact-stage">
+<div class="contact-stage" id="contact-stage"><svg aria-hidden="true" class="stage-rock" focusable="false" viewbox="0 0 10 10"><polygon points="0,0 4,0 4,1.3 2,5 4,8.7 4,10 0,10"></polygon></svg>
 <div class="contact-head">
 <h2 class="contact-title">
 <span>Давайте обсудим</span>
@@ -2041,7 +2310,7 @@
 </div>
 </div>
 </div>
-<div aria-hidden="true" class="footer-wordmark" id="footer-wordmark" translate="no">KOMRONBEK</div>
+<div class="signoff"><svg aria-hidden="true" class="signoff-mark" focusable="false" viewbox="0 0 10 10"><polygon class="mk-k" points="0,0 4,0 4,1.3 2,5 4,8.7 4,10 0,10"></polygon><polygon class="mk-m" points="5.4,0 6.2,0 7.7,4.8 9.2,0 10,0 10,10 5.4,10"></polygon><rect class="mk-p1" height="1" width="1" x="4.2" y="4.5"></rect><rect class="mk-p2" height="0.8" width="0.8" x="4.3" y="6.2"></rect><rect class="mk-p3" height="0.6" width="0.6" x="4.4" y="7.6"></rect></svg><p class="signoff-text">Ворота всегда открыты.</p></div>
 <div class="footer-bottom">
 <div>© 2026 <strong style="color: var(--ink-light-primary);">Комронбек Муллажонов</strong> · <span>Ташкент, Узбекистан</span></div>
 <div class="footer-links">
@@ -2059,7 +2328,7 @@
 <script>
     (function () {
       'use strict';
-      const I18N = {"ru": {"toast_copy_fail": "Email: kamronc1kda@gmail.com", "page_title": "Комронбек Муллажонов — HR-стажёр (онбординг и L&D)", "toast_copy": "Email скопирован: kamronc1kda@gmail.com", "toast_copied": "Скопировано: ", "meta_desc": "Комронбек Муллажонов — HR-стажёр (онбординг и L&D) в учебном центре Registan, студент Webster University в Ташкенте. Графический дизайн и веб-проекты.", "rotator": ["онбординг", "L&D", "дизайн", "сайты", "сотрудничество"]}};
+      const I18N = {"ru": {"toast_copy_fail": "Email: kamronc1kda@gmail.com", "meta_desc": "Комронбек Муллажонов — HR-стажёр (онбординг и L&D) в учебном центре Registan, студент Webster University в Ташкенте. Графический дизайн и веб-проекты.", "page_title": "Комронбек Муллажонов — HR-стажёр (онбординг и L&D)", "toast_copied": "Скопировано: ", "rotator": ["онбординг", "L&D", "дизайн", "сайты", "сотрудничество"], "toast_copy": "Email скопирован: kamronc1kda@gmail.com"}};
       const lang = document.documentElement.lang in I18N ? document.documentElement.lang : 'uz';
       const dict = I18N[lang];
       const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
