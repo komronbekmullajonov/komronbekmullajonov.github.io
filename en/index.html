@@ -2032,6 +2032,13 @@
     html.js-bg .faq-wrap .section-title-lg, html.js-bg .faq-wrap .section-lead { color: var(--ink); }
     html.js-bg .discipline-item { border-bottom-color: color-mix(in oklab, #E9E7FF calc((1 - var(--ink-t)) * 100%), #2B1E8F); }
   </style>
+<style>
+@media (min-width: 1025px) {
+  .hero-layout { grid-template-columns: 1.1fr 1fr; align-items: center; }
+  .hero-headline { font-size: clamp(2.5rem, 4.3vw, 3.5rem); }
+  .portrait-card { max-width: 440px; }
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -2115,7 +2122,7 @@
 <div class="portrait-stage hero-seq" style="--seq-delay: 220ms;">
 <div class="portrait-card" id="portrait-card"><span aria-hidden="true" class="pc-sun"></span><span aria-hidden="true" class="pc-trail"><i></i><i></i><i></i></span>
 <div class="portrait-frame" id="portrait-frame">
-<img alt="Portrait of Komronbek Mullajonov" decoding="async" fetchpriority="high" height="820" id="portrait-image" sizes="(max-width: 1024px) 340px, 370px" src="../komronbek-820.webp" srcset="../komronbek-480.webp 480w, ../komronbek-820.webp 820w" width="820"/>
+<img alt="Portrait of Komronbek Mullajonov" decoding="async" fetchpriority="high" height="820" id="portrait-image" sizes="(max-width: 1024px) 340px, 440px" src="../komronbek-820.webp" srcset="../komronbek-480.webp 480w, ../komronbek-820.webp 820w" width="820"/>
 </div>
 </div>
 </div>
@@ -2422,7 +2429,7 @@
 <script>
     (function () {
       'use strict';
-      const I18N = {"en": {"rotator": ["onboarding", "L&D", "design", "websites", "working together"], "toast_copy_fail": "Email: kamronc1kda@gmail.com", "toast_copied": "Copied: ", "meta_desc": "Komronbek Mullajonov — HR Intern (Onboarding & L&D) at Registan Learning Center and student at Webster University Tashkent. Graphic design and web projects.", "page_title": "Komronbek Mullajonov — HR Intern (Onboarding & L&D)", "toast_copy": "Email copied: kamronc1kda@gmail.com"}};
+      const I18N = {"en": {"toast_copy_fail": "Email: kamronc1kda@gmail.com", "rotator": ["onboarding", "L&D", "design", "websites", "working together"], "meta_desc": "Komronbek Mullajonov — HR Intern (Onboarding & L&D) at Registan Learning Center and student at Webster University Tashkent. Graphic design and web projects.", "toast_copy": "Email copied: kamronc1kda@gmail.com", "page_title": "Komronbek Mullajonov — HR Intern (Onboarding & L&D)", "toast_copied": "Copied: "}};
       const lang = document.documentElement.lang in I18N ? document.documentElement.lang : 'uz';
       const dict = I18N[lang];
       const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
