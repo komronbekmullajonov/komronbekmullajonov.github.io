@@ -2032,6 +2032,13 @@
     html.js-bg .faq-wrap .section-title-lg, html.js-bg .faq-wrap .section-lead { color: var(--ink); }
     html.js-bg .discipline-item { border-bottom-color: color-mix(in oklab, #E9E7FF calc((1 - var(--ink-t)) * 100%), #2B1E8F); }
   </style>
+<style>
+@media (min-width: 1025px) {
+  .hero-layout { grid-template-columns: 1.1fr 1fr; align-items: center; }
+  .hero-headline { font-size: clamp(2.5rem, 4.3vw, 3.5rem); }
+  .portrait-card { max-width: 440px; }
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Asosiy qismga o‘tish</a>
@@ -2115,7 +2122,7 @@
 <div class="portrait-stage hero-seq" style="--seq-delay: 220ms;">
 <div class="portrait-card" id="portrait-card"><span aria-hidden="true" class="pc-sun"></span><span aria-hidden="true" class="pc-trail"><i></i><i></i><i></i></span>
 <div class="portrait-frame" id="portrait-frame">
-<img alt="Komronbek Mullajonov portreti" decoding="async" fetchpriority="high" height="820" id="portrait-image" sizes="(max-width: 1024px) 340px, 370px" src="komronbek-820.webp" srcset="komronbek-480.webp 480w, komronbek-820.webp 820w" width="820"/>
+<img alt="Komronbek Mullajonov portreti" decoding="async" fetchpriority="high" height="820" id="portrait-image" sizes="(max-width: 1024px) 340px, 440px" src="komronbek-820.webp" srcset="komronbek-480.webp 480w, komronbek-820.webp 820w" width="820"/>
 </div>
 </div>
 </div>
@@ -2422,7 +2429,7 @@
 <script>
     (function () {
       'use strict';
-      const I18N = {"uz": {"toast_copy_fail": "Email: kamronc1kda@gmail.com", "rotator": ["onboarding", "L&D", "dizayn", "veb-sayt", "hamkorlik"], "toast_copy": "Email manzil nusxalandi: kamronc1kda@gmail.comkamronc1kda@gmail.com", "page_title": "Komronbek Mullajonov — HR amaliyotchisi (Onboarding va L&D)", "meta_desc": "Komronbek Mullajonov — Registon o‘quv markazida HR amaliyotchisi (Onboarding va L&D), Toshkentdagi Webster University talabasi. Grafik dizayn va veb loyihalar.", "toast_copied": "Nusxalandi: "}};
+      const I18N = {"uz": {"toast_copy_fail": "Email: kamronc1kda@gmail.com", "rotator": ["onboarding", "L&D", "dizayn", "veb-sayt", "hamkorlik"], "meta_desc": "Komronbek Mullajonov — Registon o‘quv markazida HR amaliyotchisi (Onboarding va L&D), Toshkentdagi Webster University talabasi. Grafik dizayn va veb loyihalar.", "toast_copy": "Email manzil nusxalandi: kamronc1kda@gmail.comkamronc1kda@gmail.com", "page_title": "Komronbek Mullajonov — HR amaliyotchisi (Onboarding va L&D)", "toast_copied": "Nusxalandi: "}};
       const lang = document.documentElement.lang in I18N ? document.documentElement.lang : 'uz';
       const dict = I18N[lang];
       const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
